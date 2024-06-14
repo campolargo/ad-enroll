@@ -1,0 +1,17 @@
+#!/usr/bin/sh
+
+sudo apt install libpam-pwdfile whois
+sudo install -m 400 /dev/null /etc/localpasswd
+
+if [ -f /etc/pam.d/gdm-password ]; then
+    file=/etc/pam.d/gdm-password
+elif [ -f /etc/pam.d/lightdm ]; then
+    file=/etc/pam.d/lightdm
+elif [ -f /etc/pam.d/sddm ]; then
+    file=/etc/pam.d/sddm
+else
+    exit 1
+fi
+
+sudo sed -i 's|#%PAM-1.0|#%PAM-1.0\nauth sufficient pam_pwdfile.so pwdfile=/etc/localpasswd|' $file
+echo Restart to apply changes
