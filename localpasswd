@@ -1,4 +1,5 @@
 #!/usr/bin/sh
 
-passwd = "$(mkpasswd)"
-echo "$(whoami):$passwd" | sudo tee -a /etc/localpasswd > /dev/null
+read -p 'User:' user
+passwd="$(mkpasswd)"
+echo "$user:$passwd" | sudo tee -a /etc/localpasswd > /dev/null
