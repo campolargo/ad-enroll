@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+
+sudo apt install sssd-ad sssd-tools realmd adcli
+sudo realm join campolargo.local
+sudo pam-auth-update --enable mkhomedir
