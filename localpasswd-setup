@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-sudo apt install libpam-pwdfile whois
+sudo apt-get install -y libpam-pwdfile whois
 sudo install -m 444 /dev/null /etc/localpasswd
 
 if [ -f /etc/pam.d/gdm-password ]; then
