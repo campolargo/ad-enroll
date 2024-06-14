@@ -5,8 +5,6 @@ sudo install -m 400 /dev/null /etc/localpasswd
 
 if [ -f /etc/pam.d/gdm-password ]; then
     file=/etc/pam.d/gdm-password
-elif [ -f /etc/pam.d/lightdm ]; then
-    file=/etc/pam.d/lightdm
 elif [ -f /etc/pam.d/sddm ]; then
     file=/etc/pam.d/sddm
 else
