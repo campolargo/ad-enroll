@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+
+sudo install pmcl.list /etc/apt/sources.list.d/
+sudo install pmcl-archive-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
