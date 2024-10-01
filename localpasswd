@@ -1,5 +1,0 @@
-#!/usr/bin/sh
-
-read -p 'User:' user
-passwd="$(mkpasswd)"
-echo "$user:$passwd" | sudo tee -a /etc/localpasswd > /dev/null
