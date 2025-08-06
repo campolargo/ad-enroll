@@ -1,5 +1,9 @@
 #!/bin/sh
 
+set -e
+
+read -p 'Patrimonio: ' patr
+sudo hostnamectl set-hostname "PT-${patr}L.campolargo.local"
 read -p 'Domain Admin: ' admin
 sudo realm join -U "$admin" campolargo.local
 sudo sed -i 's/\[sssd\]/[sssd]\ndefault_domain_suffix = campolargo.local/' /etc/sssd/sssd.conf
